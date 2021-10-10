@@ -1,16 +1,16 @@
 /*
  * @Author: your name
  * @Date: 2021-10-08 22:52:12
- * @LastEditTime: 2021-10-08 23:07:41
+ * @LastEditTime: 2021-10-10 18:10:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-demo\vue.config.js
  */
 module.exports = {
   // 基本路径
-  publicPath: "/",
+  publicPath: '/',
   // 输出文件目录
-  outputDir: "dist",
+  outputDir: 'dist',
   // eslint-loader 是否在保存的时候检查
   lintOnSave: false,
   // use the full build with in-browser compiler?
@@ -26,7 +26,7 @@ module.exports = {
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
   // css相关配置
-  /*css: {
+  /* css: {
         // 是否使用css分离插件 ExtractTextPlugin
         extract: true,
         // 开启 CSS source maps?
@@ -35,10 +35,11 @@ module.exports = {
         loaderOptions: {},
         // 启用 CSS modules for all css / pre-processor files.
         modules: false
-    },*/
+    }, */
   // use thread-loader for babel & TS in production build
   // enabled by default if the machine has more than 1 cores
-  parallel: require("os").cpus().length > 1,
+  // eslint-disable-next-line global-require
+  parallel: require('os').cpus().length > 1,
   // 是否启用dll
   // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode
   // dll: false,
@@ -48,19 +49,19 @@ module.exports = {
   // webpack-dev-server 相关配置
   devServer: {
     // open: process.platform === 'darwin',
-    //将服务启动后默认打开浏览器
+    // 将服务启动后默认打开浏览器
     open: true,
-    host: "0.0.0.0",
+    host: '0.0.0.0',
     port: 8080,
     https: false,
     hotOnly: false,
     proxy: {
       // 设置代理
-      "/api": {
-        target: "http://www.lzzyaf.com",
+      '/api': {
+        target: 'http://www.lzzyaf.com',
         changeOrigin: true,
         pathRewrite: {
-          "^/api": "/",
+          '^/api': '/',
         },
       },
     },
